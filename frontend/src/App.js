@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
+import { Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { login } from './components/actions/loginCreator';
+import { signUp } from './components/actions/signUp';
+import { spinnerOn, spinnerOff } from './components/actions/spinner';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	state = {
+		token: localStorage.getItem('token')
+	};
+	render() {
+		if (this.props.spinner) {
+			return <div>Loading...</div>;
+		}
+		return (
+			<div>
+				<Route exact path='/login' render={(props) => <Login {...props} login={this.props.login} token={this.state.token} />} />
+				<Route exact path='/sign-up' render={(props) => <SignUp {...props} signUp={this.props.signUp} />} />
+			</div>
+		)
+	}
 }
 
-export default App;
+function mapStateToProps(state) {
+	return {
+		loggedIn: state.login.loggedIn,
+		token: state.login.token,
+		spinner: state.spinner
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(
+		{
+			login,
+			signUp,
+			spinnerOff,
+			spinnerOn
+		},
+		dispatch
+	);
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
