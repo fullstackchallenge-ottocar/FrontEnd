@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { StyledForm } from '../StyledComponents/StyledForm';
 import { StyledInput } from '../StyledComponents/StyledInput';
 import { StyledButton } from '../StyledComponents/StyledButton';
-import { StyledTH2 } from '../StyledComponents/StyledAddTripForm';
+import { StyledTH2 } from '../StyledComponents/StyledAddCarForm';
 import { StyledLink } from '../StyledComponents/StyledLink';
 
 export default class Login extends React.Component {
