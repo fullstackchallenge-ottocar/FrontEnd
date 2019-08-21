@@ -2,8 +2,8 @@
 
 This is a simple automotive based app. It contains three views.
 * simple Login/Register/Logout -> Completed
-* /home route that dislays home, statistics, add car and logout navbars - Completed 
-    * home route will also display information we store about each car and ability to edit car information - In progress
+* /home route that dislays 'home', 'statistics', 'add car' and 'logout' navbars -> Completed 
+    * home route will also display information we store about each car and ability to edit car information -> In progress
 * /stats route that displays - Total number of cars added, Total number of active cars and inactive cars,
 Active number of HTTP requests sent to the server, classified by HTTP method (eg: 3 GET requests, 4 POST requests, 5 PUT requests - In progress
 * /add-car route allows user to add a new car - In progress
