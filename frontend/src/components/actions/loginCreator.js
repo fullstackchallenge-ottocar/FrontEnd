@@ -20,4 +20,6 @@ export const login = (user) => (dispatch) => {
 		window.location.reload(true);
 		dispatch(spinnerOff);
 	});
+	
+	
 };

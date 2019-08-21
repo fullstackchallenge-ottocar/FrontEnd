@@ -45,9 +45,9 @@ export default class Login extends React.Component {
         <StyledButton
           onClick={() =>
             this.props.signUp({
-              name: this.state.name,
               username: this.state.username,
-              password: this.state.password
+              password: this.state.password,
+              email: this.state.email
             })
           }
         >
