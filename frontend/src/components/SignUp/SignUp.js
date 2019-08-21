@@ -22,23 +22,23 @@ export default class Login extends React.Component {
       <StyledForm>
         <StyledTH2> Fill in the details to sign up </StyledTH2>
         <StyledInput
-          placeholder="Username"
-          type="text"
-          name="username"
+          placeholder='Username'
+          type='text'
+          name='username'
           value={this.state.username}
           onChange={this.onChangeHandler}
         />
         <StyledInput
-          placeholder="email"
-          type="email"
-          name="email"
+          placeholder='email'
+          type='email'
+          name='email'
           value={this.state.email}
           onChange={this.onChangeHandler}
         />
         <StyledInput
-          placeholder="Password"
-          type="password"
-          name="password"
+          placeholder='Password'
+          type='password'
+          name='password'
           value={this.state.password}
           onChange={this.onChangeHandler}
         />
@@ -54,7 +54,7 @@ export default class Login extends React.Component {
           Sign up
         </StyledButton>
         <div>
-          <StyledLink to="/login">
+          <StyledLink to='/login'>
             {' '}
             Do you already have an account ?{' '}
           </StyledLink>

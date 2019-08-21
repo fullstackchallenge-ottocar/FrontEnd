@@ -23,7 +23,7 @@ class App extends Component {
       <div>
         <Route
           exact
-          path="/login"
+          path='/login'
           render={props => (
             <Login
               {...props}
@@ -34,10 +34,10 @@ class App extends Component {
         />
         <Route
           exact
-          path="/sign-up"
+          path='/sign-up'
           render={props => <SignUp {...props} signUp={this.props.signUp} />}
         />
-        <PrivateRoute path="/" component={MainPage} token={this.state.token} />
+        <PrivateRoute path='/home' component={MainPage} token={this.state.token} />
       </div>
     );
   }

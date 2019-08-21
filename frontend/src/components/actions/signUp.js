@@ -4,7 +4,7 @@ import { spinnerOn } from './spinner';
 export const signUp = (user) => (dispatch) => {
 	dispatch(spinnerOn);
 	axios
-		.post('http://localhost:4100/api/auth/register', user)
+		.post('https://ottocar-backend.herokuapp.com/api/auth/register', user)
 		.then((res) => console.log(res)
 		)
 		.catch((error) => {

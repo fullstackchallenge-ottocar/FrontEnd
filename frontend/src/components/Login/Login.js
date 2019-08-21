@@ -12,6 +12,7 @@ export default class Login extends React.Component {
     this.state = {
       password: '',
       username: '',
+      emai: ''
     };
   }
   onChangeHandler = event => {
@@ -21,7 +22,7 @@ export default class Login extends React.Component {
   };
   render() {
     return this.props.token ? (
-      <Redirect to="/" />
+      <Redirect to='/home' />
     ) : (
       <StyledForm>
         <StyledTH2> Please log In </StyledTH2>
@@ -33,10 +34,10 @@ export default class Login extends React.Component {
           onChange={this.onChangeHandler}
         />
         <StyledInput
-          placeholder="Name"
+          placeholder="Email"
           type="text"
-          name="name"
-          value={this.state.name}
+          name="email"
+          value={this.state.email}
           onChange={this.onChangeHandler}
         />
         <StyledInput
@@ -48,21 +49,15 @@ export default class Login extends React.Component {
         />
         <StyledButton
           type="submit"
-          onClick={location =>
-            this.props.login(
-              {
-                password: this.state.password,
-                username: this.state.user,
-                name: this.state.name
-              },
-              location
-            )
-          }
-        >
+            onClick={(location) =>
+              this.props.login(
+                { password: this.state.password, username: this.state.user, email: this.state.email },
+                location
+              )}>
           Log in
         </StyledButton>
         <div>
-          <StyledLink to="/sign-up">
+          <StyledLink to='/sign-up'>
             {' '}
             Don't have an account? Sign up here!
           </StyledLink>

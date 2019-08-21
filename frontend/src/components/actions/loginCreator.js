@@ -10,7 +10,7 @@ export const login = (user) => (dispatch) => {
 	dispatch(spinnerOn);
 	axios({
 		method: 'POST',
-		url: 'http://localhost:4100/api/auth/login',
+		url: 'https://ottocar-backend.herokuapp.com/api/auth/login',
 		data,
 		headers: {
 			'Content-Type': 'application/json'
